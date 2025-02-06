@@ -1,0 +1,56 @@
+/* CSS - style.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #e96443, #904e95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.signup-container {
+    background: white;
+    padding: 40px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.signup-box h1 {
+    margin-bottom: 10px;
+}
+.signup-box p {
+    margin-bottom: 20px;
+    color: #555;
+}
+.signup-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+.signup-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00b4d8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+.signup-box button:hover {
+    background-color: #0096c7;
+}
+.signup-box a {
+    color: #00b4d8;
+    text-decoration: none;
+    font-weight: 600;
+}
+.signup-box a:hover {
+    text-decoration: underline;
+}
