@@ -1,47 +1,133 @@
+<!-- views/dashboard.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - EquityBank</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - EquityBank</title>
+  
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Dashboard</h1>
-    </header>
-    <main>
-        <div class="dashboard-container">
-            <aside class="sidebar">
-                <h2>Menu</h2>
-                <ul>
-                    <li>Dashboard</li>
-                    <li>Accounts</li>
-                    <li>Transactions</li>
-                    <li>Settings</li>
-                </ul>
-            </aside>
-            <section class="dashboard-content">
-                <div class="top-info">
-                    <div class="notifications">🔔 Notifications</div>
-                    <div class="balance">💰 Total Balance: <span>$15,000</span></div>
-                </div>
-                <div class="cards-container">
-                    <div class="card credit-card">💳 Credit Card</div>
-                    <div class="card debit-card">💳 Debit Card</div>
-                </div>
-                <div class="info-grid">
-                    <div class="calendar">📅 Calendar</div>
-                    <div class="reminders">⏰ Reminders</div>
-                    <div class="chart">📊 Financial Chart</div>
-                </div>
-            </section>
+  <header>
+    <h1>Dashboard</h1>
+  </header>
+  
+  <div class="container">
+    <main class="content dashboard">
+      
+      <!-- Top Cards Section -->
+      <div class="top-cards">
+        <div class="card notifications">
+          <span class="icon">🔔</span>
+          <span class="title">Notifications</span>
+          <span class="value">3</span>
         </div>
+        <div class="card total-balance">
+          <span class="icon">💰</span>
+          <span class="title">Total Balance</span>
+          <span class="value">$15,000</span>
+        </div>
+        <div class="card credit">
+          <span class="icon">💳</span>
+          <span class="title">Credit</span>
+          <span class="value">$5,000</span>
+        </div>
+        <div class="card debit">
+          <span class="icon">💳</span>
+          <span class="title">Debit</span>
+          <span class="value">$2,000</span>
+        </div>
+        <div class="card scene-points">
+          <span class="icon">🎟</span>
+          <span class="title">Scene Points</span>
+          <span class="value">1,200</span>
+        </div>
+      </div>
+
+      <!-- Calendar Section -->
+      <div class="calendar-section">
+        <h2>Calendar</h2>
+        <div id="calendar">
+          <table class="calendar-table">
+            <thead>
+              <tr>
+                <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="inactive">29</td><td class="inactive">30</td><td class="inactive">31</td><td>1</td><td>2</td><td>3</td><td>4</td>
+              </tr>
+              <tr>
+                <td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td>
+              </tr>
+              <tr>
+                <td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td>
+              </tr>
+              <tr>
+                <td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td>
+              </tr>
+              <tr>
+                <td>26</td><td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td class="inactive">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Financial Chart Section -->
+      <!-- Financial Chart Section -->
+<div class="chart-section">
+    <h2>Financial Chart</h2>
+    <div class="chart-container">
+      <canvas id="financialChart"></canvas>
+    </div>
+  </div>
+
     </main>
-    <script src="js/script.js"></script>
+  </div>
+
+  <!-- Script -->
+  <script src="js/script.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const ctx = document.getElementById('financialChart').getContext('2d');
+      
+      new Chart(ctx, {
+        type: 'doughnut', // Change chart type to doughnut (circular)
+        data: {
+          labels: ['Savings', 'Investments', 'Expenses', 'Loans'],
+          datasets: [{
+            data: [5000, 3000, 2000, 5000], // Example data
+            backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545'],
+            borderWidth: 2,
+            hoverOffset: 10
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '60%', // Adjusts inner space to make it more circular
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                font: {
+                  size: 14
+                }
+              }
+            }
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-

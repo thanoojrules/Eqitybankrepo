@@ -4,10 +4,19 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
     document.getElementById("loginContainer").style.display = "block";
 });
 
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    window.location.href = "dashboard.html";
-});
+// js/login.js
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('loginForm');
+  
+    if (loginForm) {
+      loginForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the default form submission
+  
+        // Change the redirection URL to homepage.html
+        window.location.href = 'homepage.html';
+      });
+    }
+  });
 
 document.getElementById("openSignup").addEventListener("click", function() {
     document.getElementById("authContainer").style.display = "block";

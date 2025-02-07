@@ -1,0 +1,38 @@
+<!-- views/settings.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings - EquityBank</title>
+  <link rel="stylesheet" href="/css/dtas.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Settings</h1>
+  </header>
+  <div class="container">
+    
+    <main class="content">
+      <h2>Update Your Details</h2>
+      <form class="settings-form">
+        <div class="form-group">
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" placeholder="+1234567890" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <textarea id="address" name="address" placeholder="Your address" required></textarea>
+        </div>
+        <button type="submit">Update Details</button>
+      </form>
+    </main>
+  </div>
+  <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5433,
+            "driver": "PostgreSQL",
+            "name": "CLOD4",
+            "database": "eqitybank",
+            "username": "postgres",
+            "password": "1999"
+        }
+    ]
+}
